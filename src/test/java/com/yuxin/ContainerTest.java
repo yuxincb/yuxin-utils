@@ -21,8 +21,10 @@ class ContainerTest {
 
     @Test
     void queryTest() {
-        List<User> users = userMapper.selectList(null);
-        System.out.println(users);
+        List<User> users1 = userMapper.selectList(null);
+        List<User> users2 = userMapper.selectUsers();
+        System.out.println(users1);
+        System.out.println(users2);
     }
 
 }
