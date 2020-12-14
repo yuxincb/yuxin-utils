@@ -1,7 +1,9 @@
-package com.yuxin.world.controller;
+package com.yuxin.project.world.controller;
 
-import com.yuxin.world.domain.User;
-import com.yuxin.world.service.UserService;
+import com.yuxin.framework.web.controller.BaseController;
+import com.yuxin.framework.web.domain.AjaxResult;
+import com.yuxin.project.world.domain.User;
+import com.yuxin.project.world.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 @Controller
-public class HelloController {
+public class HelloController extends BaseController {
 
     @Autowired
     private UserService userService;
@@ -28,10 +30,14 @@ public class HelloController {
 
     @GetMapping("/getUsers")
     @ResponseBody
-    public List<User> getUsers() {
-        List<User> allUsers = userService.getAllUsers();
-        System.out.println(allUsers);
-        return allUsers;
+    public AjaxResult getUsers() {
+        try {
+            List<User> allUsers = userService.getAllUsers();
+            return success("success", allUsers);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return fail();
     }
 
 }

@@ -1,8 +1,8 @@
-package com.yuxin.world.service.impl;
+package com.yuxin.project.world.service.impl;
 
-import com.yuxin.world.domain.User;
-import com.yuxin.world.mapper.UserMapper;
-import com.yuxin.world.service.UserService;
+import com.yuxin.project.world.domain.User;
+import com.yuxin.project.world.mapper.UserMapper;
+import com.yuxin.project.world.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

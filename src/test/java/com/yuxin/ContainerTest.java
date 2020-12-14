@@ -1,7 +1,7 @@
 package com.yuxin;
 
-import com.yuxin.world.domain.User;
-import com.yuxin.world.mapper.UserMapper;
+import com.yuxin.project.world.domain.User;
+import com.yuxin.project.world.mapper.UserMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

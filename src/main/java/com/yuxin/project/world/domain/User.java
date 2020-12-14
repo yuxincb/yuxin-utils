@@ -1,4 +1,4 @@
-package com.yuxin.world.domain;
+package com.yuxin.project.world.domain;
 
 import lombok.Data;
 import lombok.experimental.Accessors;

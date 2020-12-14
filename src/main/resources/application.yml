@@ -10,4 +10,4 @@ spring:
 
 mybatis-plus:
   mapper-locations: /mybatis/*.xml
-  type-aliases-package: com.yuxin.*.domain
+  type-aliases-package: com.yuxin.project.*.domain

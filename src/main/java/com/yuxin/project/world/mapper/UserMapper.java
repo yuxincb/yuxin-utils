@@ -1,7 +1,7 @@
-package com.yuxin.world.mapper;
+package com.yuxin.project.world.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.yuxin.world.domain.User;
+import com.yuxin.project.world.domain.User;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

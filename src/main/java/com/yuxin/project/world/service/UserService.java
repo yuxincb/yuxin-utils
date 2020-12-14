@@ -1,6 +1,6 @@
-package com.yuxin.world.service;
+package com.yuxin.project.world.service;
 
-import com.yuxin.world.domain.User;
+import com.yuxin.project.world.domain.User;
 
 import java.util.List;
 
