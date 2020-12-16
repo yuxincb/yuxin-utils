@@ -33,7 +33,7 @@ public class HelloController extends BaseController {
     public AjaxResult getUsers() {
         try {
             List<User> allUsers = userService.getAllUsers();
-            return success("success", allUsers);
+            return success(allUsers);
         } catch (Exception e) {
             e.printStackTrace();
         }

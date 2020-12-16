@@ -12,6 +12,10 @@ public class BaseController {
         return AjaxResult.success(msg);
     }
 
+    public AjaxResult success(Object data) {
+        return AjaxResult.success("success", data);
+    }
+
     public AjaxResult success(String msg, Object data) {
         return AjaxResult.success(msg, data);
     }
