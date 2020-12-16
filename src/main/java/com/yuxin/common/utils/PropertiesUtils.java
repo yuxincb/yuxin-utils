@@ -2,9 +2,6 @@ package com.yuxin.common.utils;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Properties;
 
 /**
@@ -17,28 +14,19 @@ public class PropertiesUtils {
     private PropertiesUtils() {
     }
 
-    /**
-     * 初始化配置文件
-     *
-     * @param path 配置文件路径
-     */
-    public static void init(String path) {
-        readProperties(path);
+    static {
+        readProperties();
     }
 
     /**
      * 加载配置文件
-     *
-     * @param path 配置文件路径
      */
-    private static void readProperties(String path) {
+    private static void readProperties() {
         InputStream is = null;
         try {
             props = new Properties();
-            is = PropertiesUtils.class.getResourceAsStream("/" + path);
+            is = PropertiesUtils.class.getResourceAsStream("/config.properties");
             props.load(is);
-        } catch (NullPointerException e) {
-            throw new NullPointerException("Properties file is not exist!");
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -69,22 +57,6 @@ public class PropertiesUtils {
      */
     public static String getValue(String key) {
         return props.getProperty(key);
-    }
-
-    /**
-     * 获取全部属性
-     *
-     * @return 全部属性
-     */
-    public static Map<String, String> getAllProperties() {
-        Map<String, String> properties = new HashMap<>();
-        Enumeration<?> enu = props.propertyNames();
-        while (enu.hasMoreElements()) {
-            String key = (String) enu.nextElement();
-            String value = props.getProperty(key);
-            properties.put(key, value);
-        }
-        return properties;
     }
 
 }
