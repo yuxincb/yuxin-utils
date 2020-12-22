@@ -1,6 +1,6 @@
 package com.yuxin.common.utils;
 
-import lombok.extern.log4j.Log4j;
+import lombok.extern.log4j.Log4j2;
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 import org.springframework.web.multipart.MultipartFile;
@@ -12,7 +12,7 @@ import java.io.IOException;
 /**
  * FTP工具类
  */
-@Log4j
+@Log4j2
 public class FTPUtils {
 
     private final static String ip;
