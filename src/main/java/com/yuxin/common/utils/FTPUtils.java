@@ -96,14 +96,18 @@ public class FTPUtils {
                     String suffix = fileName.substring(index);
                     String localPath = localUrl + "/" + prefix + System.nanoTime() + suffix;
                     File fileLocal = new File(localPath);
-                    if (fileLocal.exists()) fileLocal.delete();
+                    if (fileLocal.exists()) {
+                        boolean delete = fileLocal.delete();
+                        log.info("delete exist file from app server: " + delete);
+                    }
                     file.transferTo(fileLocal);
                     log.info(fileName + " has uploaded to app server");
                     fis = new FileInputStream(fileLocal);
                     success = client.storeFile(fileName, fis);
                     log.info(fileName + " has uploaded to ftp server");
                     fis.close();
-                    fileLocal.delete();
+                    boolean delete = fileLocal.delete();
+                    log.info("delete " + fileName + " from app server: " + delete);
                 }
             }
         } catch (IOException | IllegalStateException e) {
