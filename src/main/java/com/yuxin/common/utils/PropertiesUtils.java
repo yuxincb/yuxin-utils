@@ -5,7 +5,7 @@ import java.io.InputStream;
 import java.util.Properties;
 
 /**
- * 配置文件读取公共类
+ * 配置文件工具类
  */
 public class PropertiesUtils {
 
