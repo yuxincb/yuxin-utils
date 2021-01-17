@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class YuxinUtilsApplication {
+public class YuxinApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(YuxinUtilsApplication.class, args);
+        SpringApplication.run(YuxinApplication.class, args);
     }
 
 }

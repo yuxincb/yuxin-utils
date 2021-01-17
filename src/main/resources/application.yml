@@ -11,3 +11,5 @@ spring:
 mybatis-plus:
   mapper-locations: /mybatis/*.xml
   type-aliases-package: com.yuxin.project.*.domain
+  configuration:
+    map-underscore-to-camel-case: true
