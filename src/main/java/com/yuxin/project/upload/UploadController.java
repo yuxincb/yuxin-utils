@@ -1,4 +1,4 @@
-package com.yuxin.project.upload.controller;
+package com.yuxin.project.upload;
 
 import com.yuxin.common.utils.FTPUtils;
 import com.yuxin.framework.web.controller.BaseController;
@@ -11,15 +11,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 @Controller
-@RequestMapping("/file")
+@RequestMapping("/upload")
 public class UploadController extends BaseController {
 
-    @GetMapping("/1")
-    public String page() {
+    @GetMapping("")
+    public String index() {
         return "upload";
     }
 
-    @PostMapping("/upload")
+    @PostMapping("/doUpload")
     @ResponseBody
     public AjaxResult upload(MultipartFile[] files) {
         boolean upload = FTPUtils.upload(files, "/soda");
